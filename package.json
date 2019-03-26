@@ -12,7 +12,11 @@
   "dependencies": {
     "chai": "^4.2.0",
     "commander": "^2.19.0",
-    "eslint": "^5.15.3",
     "mocha": "^6.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }
