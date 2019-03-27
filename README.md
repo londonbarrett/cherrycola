@@ -1,4 +1,4 @@
-# COLACHERRY
+# CHERRYCOLA
 
 A CLI for calculating Rate Of Return and Max Drawdown on stocks.
 
