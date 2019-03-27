@@ -1,7 +1,8 @@
 {
   "name": "cherrycola",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI for calculating Rate Of Return and Max Drawdown on stocks",
+  "homepage": "https://github.com/londonbarrett/cherrycola",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha src/**/*.spec.js"

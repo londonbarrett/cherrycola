@@ -16,7 +16,7 @@ program
 
 const url = `https://www.quandl.com/api/v3/datasets/WIKI/${program.ticker}.json`;
 
-get(url, {
+module.exports = get(url, {
   params: {
     api_key: program.key,
     start_date: program.start,
