@@ -7,6 +7,7 @@ const DIV = 6;
 const sumDividends = (acc, value) => acc + value[DIV];
 
 const calculateRateOfReturn = (data) => {
+  if (!data || data.length < 1) return null;
   const dividends = data.reduce(sumDividends, 0);
   const initial = data[0][OPEN];
   const final = data[data.length - 1][CLOSE];
