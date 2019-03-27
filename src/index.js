@@ -21,9 +21,11 @@ get(url, {
     api_key: program.key,
     start_date: program.start,
     end_date: program.end,
+    order: 'asc',
   },
 })
   .then((result) => {
+    console.log(result.data.dataset.data);
     const rate = calculateRateOfReturn(result.data.dataset.data);
     const max = calculateMaxDrawdown(result.data.dataset.data);
     console.log('max', max);
