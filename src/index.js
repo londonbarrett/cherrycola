@@ -25,11 +25,10 @@ get(url, {
   },
 })
   .then((result) => {
-    console.log(result.data.dataset.data);
     const rate = calculateRateOfReturn(result.data.dataset.data);
     const max = calculateMaxDrawdown(result.data.dataset.data);
-    console.log('max', max);
-    console.log('rate', rate);
+    console.log('Max Drawdown:', max);
+    console.log('Rate Of Return:', rate);
   })
   .catch((error) => {
     throw new Error(error);

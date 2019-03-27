@@ -25,13 +25,7 @@ const calculateMaxDrawdown = (data) => {
     peak = data[peak][HIGH] - data[i][HIGH] < 0 ? i : peak;
     low = maxDiff > diff ? low : i;
     maxDiff = maxDiff > diff ? maxDiff : diff;
-    // console.log(i, 'LOW:', data[i][LOW], 'LOWEST:', data[low][LOW]);
   }
-  // console.log('============================');
-  // console.log('Peak:', peak, data[peak][HIGH]);
-  // console.log('Low:', low, data[low][LOW]);
-  // console.log('Max:', maxDiff);
-  // console.log('MAXDRAW:', maxDiff / data[peak][HIGH]);
   return maxDiff / data[peak][HIGH];
 };
 
