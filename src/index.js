@@ -8,8 +8,8 @@ const { calculateMaxDrawdown, calculateRateOfReturn } = require('./util');
 program
   .version('0.1.0')
   .option('-k, --key <key>', 'API-KEY')
-  .option('-s, --start <start>', 'Start date')
-  .option('-e, --end [end]', 'End date')
+  .option('-s, --start <start>', 'Start date in format YYYY-MM-DD')
+  .option('-e, --end [end]', 'End date in format YYYY-MM-DD')
   .option('-t, --ticker <ticker>', 'Ticker')
   .option('-l, --log', 'Log data')
   .parse(process.argv);
