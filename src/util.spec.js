@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { calculateRateOfReturn } = require('./util');
+const { calculateMaxDrawdown, calculateRateOfReturn } = require('./util');
 
 describe('Rate Of Return', () => {
   it('Returns null on empty data', () => {
@@ -22,5 +22,29 @@ describe('Rate Of Return', () => {
     ];
     const rate = calculateRateOfReturn(data);
     expect(rate).to.equal(-0.05506285937043179);
+  });
+});
+
+describe('Max Drawdown', () => {
+  it('Returns null on empty data', () => {
+    const data = [];
+    const max = calculateMaxDrawdown(data);
+    expect(max).to.equal(null);
+  });
+  it('Calculates single record', () => {
+    const data = [['2016-01-04', 102.61, 105.368, 102, 105.35, 67649387, 0, 1, 99.13651599555, 101.8011540534, 98.547165301102, 101.78376337717, 67649387]];
+    const max = calculateMaxDrawdown(data);
+    expect(max).to.equal(0.03196416369296176);
+  });
+  it('Calculates several records', () => {
+    const data = [
+      ['2016-01-04', 102.61, 105.368, 102, 105.35, 67649387, 0, 1, 99.13651599555, 101.8011540534, 98.547165301102, 101.78376337717, 67649387],
+      ['2016-01-05', 105.75, 105.85, 102.41, 102.71, 55790992, 0, 1, 102.17022284894, 102.26683771688, 98.943286259665, 99.233130863492, 55790992],
+      ['2016-01-06', 100.56, 102.37, 99.87, 100.7, 68457388, 0, 1, 97.155911202734, 98.904640312489, 96.489268613932, 97.291172017853, 68457388],
+      ['2016-01-07', 98.68, 100.13, 96.43, 96.45, 81094428, 0, 1, 95.339551685419, 96.740467270582, 93.165717156719, 93.185040130307, 81094428],
+      ['2016-01-08', 98.55, 99.11, 96.76, 96.96, 70798016, 0, 1, 95.213952357094, 95.754995617571, 93.484546220928, 93.677775956812, 70798016],
+    ];
+    const max = calculateMaxDrawdown(data);
+    expect(max).to.equal(0.08899385923476606);
   });
 });

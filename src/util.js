@@ -15,6 +15,7 @@ const calculateRateOfReturn = (data) => {
 };
 
 const calculateMaxDrawdown = (data) => {
+  if (!data || data.length < 1) return null;
   let diff = 0;
   let peak = 0;
   let low = 0;
